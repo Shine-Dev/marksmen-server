@@ -24,7 +24,7 @@ public class ServerManager : MonoBehaviour
     {
         ConnectedUsers = new List<User>();
         config = getConfig(@"config.json");
-        NetworkServer.Listen(config.port);
+        NetworkServer.Listen(1470);
         timeLeft = config.timeLimit;
         selectedMap = MapManager.getMapByName(config.mapName);
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnect);
